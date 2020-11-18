@@ -1,16 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AaSearchModule} from 'aa-search';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {ResultsComponent} from './components/results/results.component';
+import {HttpClientModule} from '@angular/common/http';
+import {SearchService} from './services/search.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResultsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AaSearchModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

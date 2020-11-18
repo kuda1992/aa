@@ -26,6 +26,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/shared-styles"]
+            },
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -122,6 +125,46 @@
             "production": {
               "devServerTarget": "aa:serve:production"
             }
+          }
+        }
+      }
+    },
+    "aa-search": {
+      "projectType": "library",
+      "root": "projects/aa-search",
+      "sourceRoot": "projects/aa-search/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/aa-search/tsconfig.lib.json",
+            "project": "projects/aa-search/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aa-search/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aa-search/src/test.ts",
+            "tsConfig": "projects/aa-search/tsconfig.spec.json",
+            "karmaConfig": "projects/aa-search/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/aa-search/tsconfig.lib.json",
+              "projects/aa-search/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
