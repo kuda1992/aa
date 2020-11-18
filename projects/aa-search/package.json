@@ -1,0 +1,13 @@
+{
+  "name": "aa-search",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "11.0.0",
+    "@angular/core": "11.0.0",
+    "@angular/forms": "11.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0",
+    "bootstrap": "^4.5.3"
+  }
+}
